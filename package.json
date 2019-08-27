@@ -1,10 +1,11 @@
 {
-  "name": "serverless-aws-batch",
+  "name": "serverless-aws-batch-orka",
   "version": "1.0.2",
   "description": "Serverless Framework Plugin for interacting with AWS Batch",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard",
+    "lint": "standard --fix"
   },
   "repository": {
     "type": "git",
