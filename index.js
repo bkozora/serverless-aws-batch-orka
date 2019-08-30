@@ -35,6 +35,7 @@ class ServerlessAWSBatchOrka {
         getBatchComputeEnvironmentLogicalId: batchenvironment.getBatchComputeEnvironmentLogicalId,
         getBatchJobQueueLogicalId: batchenvironment.getBatchJobQueueLogicalId,
         getBatchJobQueueName: batchenvironment.getBatchJobQueueName,
+        getLoggingConfiguration: batchtask.getLoggingConfiguration,
         getJobDefinitionLogicalId: batchtask.getJobDefinitionLogicalId
       }
     )

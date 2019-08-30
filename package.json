@@ -32,6 +32,7 @@
     "serverless": "^1.42.3"
   },
   "devDependencies": {
-    "aws-sdk": "^2.471.0"
+    "aws-sdk": "^2.471.0",
+    "serverless-jest-plugin": "^0.2.1"
   }
 }
