@@ -17,7 +17,7 @@ class ServerlessAWSBatchOrka {
     this.serverless = serverless
     this.options = options
     this.provider = this.serverless.getProvider('aws')
-    
+
     // Make sure that we add the names for our ECR, docker, and batch resources to the provider
     _.merge(
       this.provider.naming,
@@ -35,7 +35,7 @@ class ServerlessAWSBatchOrka {
         getBatchComputeEnvironmentLogicalId: batchenvironment.getBatchComputeEnvironmentLogicalId,
         getBatchJobQueueLogicalId: batchenvironment.getBatchJobQueueLogicalId,
         getBatchJobQueueName: batchenvironment.getBatchJobQueueName,
-        getLoggingConfiguration: batchtask.getLoggingConfiguration,
+        // getLogConfiguration: batchtask.getLoggingConfiguration,
         getJobDefinitionLogicalId: batchtask.getJobDefinitionLogicalId
       }
     )
