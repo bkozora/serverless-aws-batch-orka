@@ -12,12 +12,12 @@ const _ = require('lodash')
 
 BbPromise.promisifyAll(fse)
 
-class ServerlessAWSBatch {
+class ServerlessAWSBatchOrka {
   constructor (serverless, options) {
     this.serverless = serverless
     this.options = options
     this.provider = this.serverless.getProvider('aws')
-
+    
     // Make sure that we add the names for our ECR, docker, and batch resources to the provider
     _.merge(
       this.provider.naming,
@@ -53,7 +53,8 @@ class ServerlessAWSBatch {
         .then(batchtask.compileBatchTasks),
 
       'after:package:createDeploymentArtifacts': () => BbPromise.bind(this)
-        .then(docker.buildDockerImageFromDockerfile),
+        // .then(docker.buildDockerImageFromDockerfile),
+        .then(docker.buildDockerImage),
 
       'before:aws:deploy:deploy:uploadArtifacts': () => BbPromise.bind(this)
         .then(docker.pushDockerImageToECR),
@@ -64,4 +65,4 @@ class ServerlessAWSBatch {
   }
 }
 
-module.exports = ServerlessAWSBatch
+module.exports = ServerlessAWSBatchOrka
